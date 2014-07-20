@@ -1,6 +1,7 @@
 /** Copyright (c) 2014 by Jean-Marc.Viglino [at] ign.fr
 * Licensed under the Beerware license (http://en.wikipedia.org/wiki/Beerware), 
 * feel free to use and abuse it in your projects (the code, not the beer ;-). 
+* Source code on Github : https://github.com/Viglino/i18n.js
 */
 /** Internationalization object
 Initialization : 

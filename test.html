@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html dir="ltr" lang="fr">
+<head>
+<title data-i18n="titre"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="i18n.js"></script>
+
+<script type="text/javascript">
+i18n.add({
+"fr":
+{	titre:	"Test d'internationalisation",
+	info:	"Exemple d'utilisation d'i18n.js.",
+	uparam:	"Utlisation avec paramêtres :",
+	entry:	"Vous avez entré : {1} {2} {3}",
+	change:	"Changer...",
+	lang:	"français"
+},
+"en":
+{	titre:	"Internationalization test",
+	info:	"An example to use i18n.js.",
+	uparam:	"Use it with parametres :",
+	entry:	"You entered : {1} {2} {3}",
+	change:	"Change...",
+	lang:	"english"
+}
+});
+
+function setEntry()
+{	var param = [ $("#e1").val(), $("#e2").val(), $("#e3").val() ];
+	var v = _T("entry", param);
+	$("#entry").html (v);
+}
+function setLang(l)
+{	i18n.setLang(l);
+	setEntry();
+}
+
+$(document).ready(function(){ setLang(); });
+</script>
+<style>
+	h1 { color:#369; margin:0; }
+	.info { background:#adf; padding:0.5em; margin:0; display:table; min-width:400px}
+	.lang 
+	{	background:#963; 
+		color: #fff;
+		line-height: 44px;
+		position: fixed;
+		right: -50px;
+		text-align: center;
+		top: 20px;
+		transform: rotate(45deg);
+		width: 200px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+</style>
+</head>
+
+<body>
+<h1 data-i18n="titre"></h1>
+<div class="lang" data-i18n="lang"></div>
+<p class="info" data-i18n="info"></p>
+<input id="fr" type="radio" name="lang" onclick="setLang('fr');" CHECKED /><label for="fr">français</label>
+<input id="en" type="radio" name="lang" onclick="setLang('en');"/><label for="en">english</label>
+<hr />
+<span data-i18n="uparam"></span><br />
+<span id="entry"></span>
+<br />
+<input id="e1"/>
+<input id="e2"/>
+<input id="e3"/>
+<button onclick="setEntry();" data-i18n="change"></button>
+</body>
+</html>

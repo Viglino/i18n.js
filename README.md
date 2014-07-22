@@ -54,7 +54,7 @@ Add data-i18n attribut to html tags :
 ```html
 <p data-i18n="info"></p>
 ```
-=> After calling : setLang("en");
+=> Calling setLang("en"); fill html content with i18n value 
 ```html
 <p data-i18n="info">A test page.</p>
 ```

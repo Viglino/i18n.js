@@ -25,15 +25,15 @@ Use the _T() (or i18n.T()) function to translate keywords.
 
 If no translation is found in the selected language, the default language (the first in the table) is tested. If no translation is found, the key is returned.
 ```javascript
-	_T("test");			// => "Une page de test."
-	_T("toto",1);			// => "fr 1 {1} {2}"
-	_T("toto",[10,2,"test"]);	// => "fr 10 2 test"
-	_T("info");			// => "Information"
-	_T("titi");			// => "titi"
+	_T("test");					// => "Une page de test."
+	_T("toto",1);				// => "fr 1 {1} {2}" format the first value
+	_T("toto",[10,2,"test"]);	// => "fr 10 2 test" format string
+	_T("info");					// => "Information"
+	_T("titi");					// => "titi" return the key
 	i18n.setLang("en");
-	_T("test");			// => "A test page."
+	_T("test");					// => "A test page."
 	_T("toto",[10,2,"test"]);	// => "en 10 2 test"
-	_T("info");			// => "Information"
+	_T("info");					// => "Information" return the default "fr" value
 ```
 
 ###Use pattern to format parametres 
@@ -45,7 +45,7 @@ fr:{
   test2: "TEST {1} {2}/{3}",
 }
 });
-_T("test1",10);	// => "TEST 10"
+_T("test1",10);				// => "TEST 10"
 _T("test2",["test",10,2]);	// => "TEST test 10/2"
 ```
     

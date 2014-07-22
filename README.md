@@ -38,7 +38,6 @@ If no translation is found in the selected language, the default language (the f
 
 ###Use pattern to format parametres 
 Format string by replacing elements like {1} with parameters passed as array.
-
 ```javascript
 i18n.add({	
 fr:{
@@ -46,8 +45,8 @@ fr:{
   test2: "TEST {1} {2}/{3}",
 }
 });
-_T("test",10);	// => "TEST 10"
-_T("test1",[10,2,"test"]);	// => "TEST test 10/2"
+_T("test1",10);	// => "TEST 10"
+_T("test2",["test",10,2]);	// => "TEST test 10/2"
 ```
     
 ###Use with jQuery
